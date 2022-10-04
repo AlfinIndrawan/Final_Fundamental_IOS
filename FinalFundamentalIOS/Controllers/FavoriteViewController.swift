@@ -148,7 +148,6 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
             self.present(alert, animated: true)
           }
         }
-        
       }))
       alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
         self.navigationController?.popViewController(animated: true)

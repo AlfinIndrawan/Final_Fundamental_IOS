@@ -31,14 +31,10 @@ class DetailViewController: UIViewController, GamesManagerDelegate {
             guard let id = result.id else { return }
             self.dataIdFav.append(id)
           }
-        } else {
-//          self.dataIdFav.removeAll()
         }
       }
     }
     if dataIdFav.isEmpty {
-//      gameModelsDetail?.selected = false
-//      favoriteButton.isSelected = false
       self.favoriteButton.reloadInputViews()
     }
     gamesManager.detailGame(detailId: String(detailID))
@@ -148,8 +144,7 @@ class DetailViewController: UIViewController, GamesManagerDelegate {
       }))
       self.present(alert, animated: true, completion: nil)
     } else {
-      //                 Selected false (not yet added to favorite)
-      
+      // Selected false (not yet added to favorite)
       let alert = UIAlertController(title: "Alert", message: "do You want to add \(gameTitleFav) to favorite?", preferredStyle: .alert)
       alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
         sender.isSelected = true
@@ -157,6 +152,7 @@ class DetailViewController: UIViewController, GamesManagerDelegate {
         // Add games to Core Data
         self.gamesProvider.addGames(gameIdFav, true, gameDescription, gameRealesedFav, gameImageFav, gameWebsite, gameRatingFav, gameTitleFav)
         self.dataIdFav.append(gameIdFav)
+        self.navigationController?.popViewController(animated: true)
       }))
       alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (_) in
         

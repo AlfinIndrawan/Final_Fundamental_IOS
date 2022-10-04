@@ -53,19 +53,22 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8k-os-JHc">
-                                        <rect key="frame" x="135" y="10" width="229" height="25.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                        <rect key="frame" x="135" y="10" width="229" height="23"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dD-Fa-j27">
-                                        <rect key="frame" x="135" y="85.5" width="76.5" height="18"/>
+                                        <rect key="frame" x="135" y="83" width="76.5" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game URL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7y0-dX-UPp">
-                                        <rect key="frame" x="135" y="113.5" width="269" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game URL" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7y0-dX-UPp">
+                                        <rect key="frame" x="135" y="111" width="269" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="zS6-lc-wiy"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" systemColor="linkColor"/>
                                         <nil key="highlightedColor"/>
@@ -83,7 +86,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9XA-2g-rgz" customClass="Ratings" customModule="FinalFundamentalIOS" customModuleProvider="target">
-                                        <rect key="frame" x="135" y="45.5" width="120" height="30"/>
+                                        <rect key="frame" x="135" y="43" width="120" height="30"/>
                                         <color key="tintColor" name="AccentColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="6DZ-RU-qpr"/>
@@ -98,12 +101,12 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="6wb-z2-YjA" firstAttribute="top" secondItem="iwP-Z4-xDA" secondAttribute="bottom" constant="20" id="2bJ-yk-3ZO"/>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6wb-z2-YjA" secondAttribute="bottom" constant="20" id="7ZN-2P-Crd"/>
                                     <constraint firstItem="gPk-49-BQc" firstAttribute="leading" secondItem="h8k-os-JHc" secondAttribute="trailing" constant="10" id="Fva-Ih-KeK"/>
                                     <constraint firstItem="9XA-2g-rgz" firstAttribute="leading" secondItem="iwP-Z4-xDA" secondAttribute="trailing" constant="10" id="HmR-1X-zXN"/>
                                     <constraint firstItem="1dD-Fa-j27" firstAttribute="top" secondItem="9XA-2g-rgz" secondAttribute="bottom" constant="10" id="MUo-Qz-U9U"/>
                                     <constraint firstItem="9XA-2g-rgz" firstAttribute="top" secondItem="h8k-os-JHc" secondAttribute="bottom" constant="10" id="NmN-Lc-K1x"/>
+                                    <constraint firstItem="6wb-z2-YjA" firstAttribute="top" secondItem="iwP-Z4-xDA" secondAttribute="bottom" constant="20" id="OD9-ct-uV2"/>
                                     <constraint firstItem="gPk-49-BQc" firstAttribute="top" secondItem="f9x-Aa-gC2" secondAttribute="top" constant="10" id="U3T-i9-G5m"/>
                                     <constraint firstAttribute="trailing" secondItem="7y0-dX-UPp" secondAttribute="trailing" constant="10" id="dwU-jC-RVe"/>
                                     <constraint firstAttribute="trailing" secondItem="6wb-z2-YjA" secondAttribute="trailing" constant="20" id="eso-Vp-Qxu"/>
