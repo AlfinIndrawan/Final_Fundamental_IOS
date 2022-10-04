@@ -8,15 +8,20 @@ class AuthViewController: UIViewController {
   @IBOutlet var linkedinField: UITextField!
   @IBOutlet var mainButton: UIButton!
   @IBOutlet var authView: UIView!
+  @IBOutlet var backButton: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     if AccountModel.stateLogin == true {
       titleAuth.text = "Edit"
       self.mainButton.setTitle("Save", for: .normal)
+      self.backButton.alpha = 1
+      self.backButton.isEnabled = true
     } else {
       titleAuth.text = "Sign Up"
       self.mainButton.setTitle("Create", for: .normal)
+      self.backButton.alpha = 0
+      self.backButton.isEnabled = false
     }
     UIMode()
     cardAnimate()
@@ -84,6 +89,9 @@ class AuthViewController: UIViewController {
     } else {
       overrideUserInterfaceStyle = .light
     }
+  }
+  @IBAction func backButton(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
   }
   
 }

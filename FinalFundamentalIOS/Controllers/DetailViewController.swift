@@ -13,7 +13,7 @@ class DetailViewController: UIViewController, GamesManagerDelegate {
   @IBOutlet var gameRating: Ratings!
   @IBOutlet var gameDate: UILabel!
   @IBOutlet var gameUrl: UILabel!
-  @IBOutlet var gameDescription: UITextView!
+  @IBOutlet var gameDescription: UILabel!
   @IBOutlet var gameImagePreview: UIImageView!
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -32,13 +32,13 @@ class DetailViewController: UIViewController, GamesManagerDelegate {
             self.dataIdFav.append(id)
           }
         } else {
-          self.dataIdFav.removeAll()
+//          self.dataIdFav.removeAll()
         }
       }
     }
     if dataIdFav.isEmpty {
-      gameModelsDetail?.selected = false
-      favoriteButton.isSelected = false
+//      gameModelsDetail?.selected = false
+//      favoriteButton.isSelected = false
       self.favoriteButton.reloadInputViews()
     }
     gamesManager.detailGame(detailId: String(detailID))
@@ -57,21 +57,20 @@ class DetailViewController: UIViewController, GamesManagerDelegate {
   func didUpdateGames(gamesManager: GamesManager, gamesModel: [GamesModel]) {
     DispatchQueue.main.async {
       self.gameModelsDetail = gamesModel[0]
+      print(self.dataIdFav)
       for data in self.dataIdFav {
         if self.gameModelsDetail?.id == data {
           self.gameModelsDetail?.selected = true
           self.favoriteButton.isSelected = true
           self.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
           self.favoriteButton.reloadInputViews()
-        }
-        print(data)
-        if self.gameModelsDetail?.id != data {
+          break
+        } else {
           self.gameModelsDetail?.selected = false
           self.favoriteButton.isSelected = false
           self.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
           self.favoriteButton.reloadInputViews()
         }
-        
       }
       self.updateUI()
     }
